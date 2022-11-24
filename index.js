@@ -3,60 +3,6 @@ const fs = require("fs");
 
 const zip = JSZip()
 
-// const getExtension = (fileName) => {
-//   const arr = fileName.split(".");
-//   const extension = arr[arr.length - 1]
-//   return extension;
-// };
-
-// const parseMap = (data) => {
-//   const LINE_REGEX = /\r\n/;
-//   // const CATEGORY_REGEX = /\[(.*?)\]/
-//   const CATEGORY_REGEX = /\[([^)]+)\]/
-//   const PARAMETER_REGEX = /([^\/.\s]+)\:([^\/\s]+)$/;
-  
-//   const lines = data.split(LINE_REGEX);
-//   lines.forEach(line => {
-//     const map = {}
-    
-//     const parameter = line.match(PARAMETER_REGEX);
-//     const category = line.match(CATEGORY_REGEX);
-
-//     const categoryName = category && category[1];
-    
-//     if (parameter) {
-//       console.log(parameter);
-//     } else {
-//       map
-//     }
-//   })
-  
-//   // console.log(lines)
-// }
-
-// zip = JsZip()
-
-// const archiveName = "1857899.osz";
-
-// fs.readFile(archiveName, (err, data) => {
-//   if (err) throw err;
-//   zip.loadAsync(data).then((result) => {
-//     const files = result.files;
-//     const fileNames = Object.keys(files);
-
-//     fileNames.forEach((name) => {
-//       const currentFile = zip.file(name);
-//       const ext = getExtension(name);
-//       if (ext === "osu") {
-//         const file = currentFile.async("text");
-//         file.then((data) => {
-//           parseMap(data);
-//         });
-//       }
-//     });
-//   });
-// });
-
 // OSU MapReader v1.0
 
 const LINE_REGEX = /\r\n/;
