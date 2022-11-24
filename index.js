@@ -41,7 +41,7 @@ const filterExtension = (files, ext) => {
   return result
 }
 
-const parseChart = (osuFile) => {
+const parseChart = (osuFile, callback) => {
   const textFile = osuFile.async("text");
   textFile.then((data) => {
     const lines = data.split(LINE_REGEX);
@@ -72,12 +72,13 @@ const parseChart = (osuFile) => {
       }
     });
 
-    console.log(chart)
+    callback(chart);
   });
 }
 
 readMap("1857899.osz", (files) => {
   const osuFiles = filterExtension(files, "osu")
-  // console.log(osuFiles[0])
-  parseChart(osuFiles[0]);
+  parseChart(osuFiles[0], (chart) => {
+    // Send from server, for example
+  });
 });
